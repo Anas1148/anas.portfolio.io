@@ -6,6 +6,16 @@
     <title>Portfolio | Anas Ibn Aziz</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar hiding for the staircase container */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-teal-300 selection:text-slate-900 relative overflow-x-hidden">
 
@@ -17,10 +27,11 @@
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold tracking-tight hover:text-teal-400 transition">Portfolio</a>
             <nav class="space-x-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-teal-400 transition">About</a>
+                <a href="#about" class="hover:text-teal-400 transition hidden sm:inline">About</a>
                 <a href="#projects" class="hover:text-teal-400 transition">Projects</a>
+                <a href="#journey" class="hover:text-teal-400 transition">Journey</a>
                 <a href="#achievements" class="hover:text-teal-400 transition">Achievements</a>
-                <a href="#contact" class="hover:text-teal-400 transition">Contact</a>
+                <a href="#contact" class="hover:text-teal-400 transition hidden sm:inline">Contact</a>
             </nav>
         </div>
     </header>
@@ -59,7 +70,7 @@
             </div>
         </section>
 
-        <!-- Projects Section (Modular & Extensible) -->
+        <!-- Projects Section -->
         <section id="projects" class="space-y-8">
             <div class="border-b border-slate-800 pb-4">
                 <h2 class="text-2xl font-bold text-slate-100">Highlighted Projects</h2>
@@ -107,6 +118,59 @@
                     <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
                         <span>2D Physics</span> • <span>Game Loop</span> • <span>Multiplayer</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Journey Section (The Staircase) -->
+        <section id="journey" class="space-y-4">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold text-slate-100">Academic Journey</h2>
+                <p class="text-slate-400 text-sm">Milestones completed and the climb ahead.</p>
+            </div>
+
+            <!-- Horizontal scroll container for smaller screens -->
+            <div class="w-full overflow-x-auto pb-12 pt-16 no-scrollbar cursor-default">
+                <!-- Minimum width ensures the staircase shape remains intact -->
+                <div class="min-w-[750px] flex flex-col">
+                    
+                    <!-- Stair 5: Far Future -->
+                    <div class="ml-[540px] w-[210px] h-14 border-t-2 border-l-2 border-slate-800 border-dashed bg-slate-900/20 rounded-tl-lg flex items-center justify-center backdrop-blur-sm">
+                        <span class="text-slate-700 font-mono text-xs tracking-widest">? ? ?</span>
+                    </div>
+                    
+                    <!-- Stair 4: Near Future -->
+                    <div class="ml-[360px] w-[210px] h-16 border-t-2 border-l-2 border-slate-700/80 border-dashed bg-slate-800/20 rounded-tl-lg flex items-center justify-center -mt-px backdrop-blur-sm">
+                        <span class="text-slate-500 font-mono text-sm">Exciting Unknowns</span>
+                    </div>
+
+                    <!-- Stair 3: Present (IUT) -->
+                    <div class="ml-[180px] w-[350px] border-t-2 border-l-2 border-teal-400 bg-slate-800/90 shadow-[0_0_25px_rgba(45,212,191,0.25)] rounded-tl-lg p-5 relative -mt-px backdrop-blur-md">
+                        <!-- Waving Stickman -->
+                        <div class="absolute -top-[42px] left-8 text-teal-300 font-mono text-xs leading-[14px] font-bold text-center animate-bounce">
+                           \o/<br>
+                            |<br>
+                           / \
+                        </div>
+                        <h3 class="font-bold text-teal-300 text-lg">B.Sc. in Computer Science & Engineering</h3>
+                        <p class="text-sm text-slate-300 mt-1">Islamic University of Technology (IUT)</p>
+                        <span class="inline-block mt-4 text-[10px] font-bold uppercase tracking-wider bg-teal-500/20 text-teal-400 border border-teal-500/30 px-3 py-1.5 rounded-md shadow-[0_0_10px_rgba(45,212,191,0.3)]">📍 Currently Here</span>
+                    </div>
+
+                    <!-- Stair 2: HSC -->
+                    <div class="ml-[90px] w-[350px] border-t-2 border-l-2 border-emerald-700/80 bg-emerald-950/40 rounded-tl-lg p-5 relative -mt-px backdrop-blur-sm">
+                        <h3 class="font-bold text-emerald-400 text-lg">Higher Secondary Certificate</h3>
+                        <p class="text-sm text-emerald-500/80 mt-1">Adamjee Cantonment College, Dhaka</p>
+                        <span class="inline-block mt-3 text-[10px] font-bold uppercase tracking-wider bg-emerald-900/40 text-emerald-500 border border-emerald-800/50 px-2 py-1 rounded">Completed (2023)</span>
+                    </div>
+
+                    <!-- Stair 1: SSC -->
+                    <div class="ml-0 w-[350px] border-t-2 border-l-2 border-emerald-900 bg-emerald-950/20 rounded-tl-lg rounded-bl-xl p-5 relative -mt-px backdrop-blur-sm">
+                        <h3 class="font-bold text-emerald-600">Secondary School Certificate</h3>
+                        <p class="text-sm text-emerald-700 mt-1">Adamjee Cantonment Public School, Dhaka</p>
+                        <span class="inline-block mt-3 text-[10px] font-bold uppercase tracking-wider bg-emerald-950/50 text-emerald-700 border border-emerald-900/30 px-2 py-1 rounded">Completed (2021)</span>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -180,7 +244,6 @@
             height = canvas.height = window.innerHeight;
         });
 
-        // Generate glowing dots
         const numParticles = 65;
         const particles = [];
         const colors = ['#2dd4bf', '#38bdf8', '#818cf8', '#f1f5f9'];
@@ -204,7 +267,6 @@
                 p.x += p.vx;
                 p.y += p.vy;
 
-                // Wrap around edges
                 if (p.x < 0) p.x = width;
                 if (p.x > width) p.x = 0;
                 if (p.y < 0) p.y = height;
